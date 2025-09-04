@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VdK TV - Offline-Archiv</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="VdK TV Logo">
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Videos durchsuchen...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="filter-container">
+            <label for="category-filter">Kategorie:</label>
+            <select id="category-filter">
+                <option value="">Alle Kategorien</option>
+                <!-- Wird dynamisch gefüllt -->
+            </select>
+
+            <label for="tag-filter">Tag:</label>
+            <select id="tag-filter">
+                <option value="">Alle Tags</option>
+                <!-- Wird dynamisch gefüllt -->
+            </select>
+
+            <label for="sort-by">Sortieren nach:</label>
+            <select id="sort-by">
+                <option value="date-desc">Neueste zuerst</option>
+                <option value="date-asc">Älteste zuerst</option>
+                <option value="title-asc">Titel (A-Z)</option>
+                <option value="title-desc">Titel (Z-A)</option>
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <div class="videos-container" id="videos-grid">
+            <!-- Videos werden hier dynamisch eingefügt -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Seitenzahlen werden hier dynamisch eingefügt -->
+        </div>
+    </main>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div class="modal-details">
+                <div class="modal-left">
+                    <div class="modal-thumbnail">
+                        <img id="modal-thumbnail" src="" alt="">
+                    </div>
+                    <div class="modal-actions">
+                        <button id="open-video-button" class="video-button">
+                            <i class="fas fa-play"></i> Video öffnen
+                        </button>
+                        <button id="copy-path-button" class="video-button">
+                            <i class="fas fa-link"></i> Pfad kopieren
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-metadata">
+                        <p><strong>Datum:</strong> <span id="modal-date"></span></p>
+                        <p><strong>Kategorie:</strong> <span id="modal-category"></span></p>
+                        <p><strong>Tags:</strong> <span id="modal-tags"></span></p>
+                        <p><strong>Dateipfad:</strong> <span id="modal-path"></span></p>
+                    </div>
+                    <div class="modal-description" id="modal-description">
+                        <!-- Beschreibung wird hier dynamisch eingefügt -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 VdK TV - Offline-Archiv</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
